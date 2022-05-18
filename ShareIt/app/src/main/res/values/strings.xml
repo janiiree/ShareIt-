@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ShareIt!</string>
+    <string name="lang_select">Selecciona un idioma</string>
+    <string name="eng">Inglés</string>
+    <string name="sp">Español</string>
+    <string name="eusk">Euskera</string>
+    <string name="cancel">Cancelar</string>
+    <string name="gotit">Entendido</string>
+    <string name="lang_en">Inglés</string>
+    <string name="lang_es">Español</string>
+    <string name="select_language">Selecciona un idioma</string>
+    <string name="lang_eu">Euskera</string>
+    <string name="app_description">poner una descripcion</string>
+    <string name="fill_all_gaps">Es necesario rellenar todos los campos</string>
+    <string name="welcome">"Bienvendido"</string>
+    <string name="incorrect_user_pass">Usuario o contraseña incorrectos</string>
+    <string name="email_already_registered">El email ya está registrado</string>
+</resources>
