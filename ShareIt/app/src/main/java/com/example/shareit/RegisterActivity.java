@@ -56,18 +56,52 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), R.string.email_already_registered   , Toast.LENGTH_LONG).show();
                         } else if (workInfo != null) {
                             // El email no estaba registrado y se va a crear un nuevo usuario
-                            OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(RegisterWorker.class).setInputData(data).build();
-                            WorkManager.getInstance(this).enqueue(otwr2);
+                            if (checkPassword()) {
+                                OneTimeWorkRequest otwr2 = new OneTimeWorkRequest.Builder(RegisterWorker.class).setInputData(data).build();
+                                WorkManager.getInstance(this).enqueue(otwr2);
 
-                            Toast.makeText(getApplicationContext(), R.string.welcome + " " + username + "!", Toast.LENGTH_LONG).show();
-                            finish();
-                            Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
-                            intent.putExtra("name", username)
-                                    .putExtra("email", email);
-                            startActivity(intent);
+                                Toast.makeText(getApplicationContext(), R.string.welcome + " " + username + "!", Toast.LENGTH_LONG).show();
+                                finish();
+                                Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
+                                intent.putExtra("name", username)
+                                        .putExtra("email", email);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
+                            }
                         }
                     });
             WorkManager.getInstance(this).enqueue(otwr);
         }
+    }
+    
+    private Boolean checkPassword() {
+        Log.d("debug","---> SignUpActivity - checkPassword()");
+        boolean secure;
+
+        if (password.length() > 6) {
+            boolean number = false;
+            boolean capital = false;
+            boolean special = false;
+
+            Pattern p = Pattern.compile("[^A-Za-z0-9]");
+            Matcher m = p.matcher(password);
+
+            for (char letter : password.toCharArray()) {
+                if (Character.isDigit(letter)) {
+                    number = true;
+                } else if (Character.isUpperCase(letter)) {
+                    capital = true;
+                } else if (m.find()) {
+                    special = true;
+                }
+            }
+
+            secure = number && capital && special;
+
+        } else {
+            secure = false;
+        }
+        return secure;
     }
 }
