@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#E6EE00</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_description">poner una descripcion</string>
+    <string name="app_name">ShareIt!</string>
+    <string name="cancel">Cancelar</string>
+    <string name="email">Email</string>
+    <string name="email_already_registered">El email ya está registrado</string>
+    <string name="fill_all_gaps">Es necesario rellenar todos los campos</string>
+    <string name="gotit">Entendido</string>
+    <string name="incorrect_user_pass">Usuario o contraseña incorrectos</string>
+    <string name="info">Información</string>
+    <string name="lang_change">Cambiar idioma</string>
+    <string name="lang_en">Inglés</string>
+    <string name="lang_es">Español</string>
+    <string name="lang_eu">Euskera</string>
+    <string name="lang_select">Selecciona un idioma</string>
+    <string name="login">Inicia sesión</string>
+    <string name="pass_not_secure">La contraseña debe tener una longitud mínima de 6 carácteres y debe incluir al menos una letra mayúscula, un número y un caracter especial.</string>
+    <string name="password">Contraseña</string>
+    <string name="select_language">Selecciona un idioma</string>
+    <string name="signup">Regístrate</string>
+    <string name="start">Empezar</string>
+    <string name="username">Nombre</string>
+    <string name="welcome">"Bienvendido"</string>
+    <style name="Theme.ShareIt" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimaryVariant</item>
+        
+    </style>
+</resources>
