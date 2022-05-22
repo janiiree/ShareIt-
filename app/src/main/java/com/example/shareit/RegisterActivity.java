@@ -42,8 +42,17 @@ public class RegisterActivity extends AppCompatActivity {
 
         btnRegister = findViewById(R.id.btnRegister);
 
+        if(username.isEmpty()){
+            mostrarError(etUsername,"Tienes que poner tu usuario");
+        }else if(email.isEmpty()){
+            mostrarError(etEmail,"Tienes que poner tu email");
+        }else if(password.isEmpty()){
+            mostrarError(etPassword,"Tienes que poner tu contraseña 8 digitos.");
+        }
+
         if (email == null || password == null || username == null) {
-            Toast.makeText(getApplicationContext(), R.string.fill_all_gaps, Toast.LENGTH_LONG).show();
+//            Toast.makeText(getApplicationContext(), R.string.fill_all_gaps, Toast.LENGTH_LONG).show();
+
         } else {
             Data data = new Data.Builder()
                     .putString("email", email)
@@ -58,7 +67,7 @@ public class RegisterActivity extends AppCompatActivity {
                     .observe(this, workInfo -> {
                         if (workInfo != null && workInfo.getState().isFinished()) {
                             // El email ya estaba registrado
-                            Toast.makeText(getApplicationContext(), R.string.email_already_registered   , Toast.LENGTH_LONG).show();
+//                            Toast.makeText(getApplicationContext(), R.string.email_already_registered   , Toast.LENGTH_LONG).show();
                         } else if (workInfo != null) {
                             // El email no estaba registrado y se va a crear un nuevo usuario
                             if (checkPassword()) {
@@ -72,14 +81,17 @@ public class RegisterActivity extends AppCompatActivity {
                                         .putExtra("email", email);
                                 startActivity(intent);
                             } else {
-                                Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
                             }
                         }
                     });
             WorkManager.getInstance(this).enqueue(otwr);
         }
     }
-    
+    public void mostrarError(EditText inputText, String m){
+        inputText.setError(m);
+        inputText.requestFocus();
+    }
     private Boolean checkPassword() {
         Log.d("debug","---> SignUpActivity - checkPassword()");
         boolean secure;

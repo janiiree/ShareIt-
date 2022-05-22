@@ -36,6 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
 
+
+        if(email.isEmpty()){
+            mostrarError(etEmail,"Tienes que poner tu email");
+        }else if(password.isEmpty()){
+            mostrarError(etPassword,"Tienes que poner tu contraseña 8 digitos.");
+        }
+
+
         if (email == null || password == null) {
             Toast.makeText(getApplicationContext(), R.string.fill_all_gaps, Toast.LENGTH_LONG).show();
         } else {
@@ -66,6 +74,11 @@ public class LoginActivity extends AppCompatActivity {
                     });
             WorkManager.getInstance(this).enqueue(otwr);
         }
+    }
+
+    public void mostrarError(EditText inputText, String m){
+        inputText.setError(m);
+        inputText.requestFocus();
     }
 
     public void onClickRegister(View view) {
