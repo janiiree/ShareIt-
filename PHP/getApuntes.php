@@ -12,10 +12,6 @@ $result = mysqli_query($con,$sql);
 //response array
 $response = array();
  
-$response['error'] = false;
- 
-$response['message'] = "Apuntes aparecen correctamente";
- 
 $response['apuntes'] = array();
  
 //traversing through all the rows
