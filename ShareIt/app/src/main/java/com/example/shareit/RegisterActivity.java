@@ -13,11 +13,14 @@ import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnRegister;
-    EditText etEmail, etPassword, etUsername;
-    String email, password, username;
+    EditText etDegree, etEmail, etPassword, etUsername;
+    String degree, email, password, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,9 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onClickRegister(View view) {
+        etDegree = findViewById(R.id.etDegree);
+        degree = etDegree.getText().toString();
+
         etEmail = findViewById(R.id.etEmail);
         email = etEmail.getText().toString();
 
@@ -37,16 +43,17 @@ public class RegisterActivity extends AppCompatActivity {
 
         btnRegister = findViewById(R.id.btnRegister);
 
-        if (email == null || password == null || username == null) {
+        if (degree == null || email == null || password == null || username == null) {
             Toast.makeText(getApplicationContext(), R.string.fill_all_gaps, Toast.LENGTH_LONG).show();
         } else {
             Data data = new Data.Builder()
                     .putString("email", email)
                     .putString("username", username)
+                    .putString("degree", degree)
                     .putString("password", password)
                     .build();
 
-            Log.d("prueba", username + " " + email + " " + password);
+            Log.d("prueba", username + " "+ degree + " " + email + " " + password);
 
             OneTimeWorkRequest otwr = new OneTimeWorkRequest.Builder(CheckUserLoginWorker.class).setInputData(data).build();
             WorkManager.getInstance(this).getWorkInfoByIdLiveData(otwr.getId())
@@ -64,7 +71,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 finish();
                                 Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
                                 intent.putExtra("name", username)
-                                        .putExtra("email", email);
+                                        .putExtra("email", email)
+                                        .putExtra("degree", degree);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
@@ -74,12 +82,13 @@ public class RegisterActivity extends AppCompatActivity {
             WorkManager.getInstance(this).enqueue(otwr);
         }
     }
-    
+
     private Boolean checkPassword() {
         Log.d("debug","---> SignUpActivity - checkPassword()");
         boolean secure;
 
         if (password.length() > 6) {
+            Log.d("debug","---> SignUpActivity - checkPassword() - > 6");
             boolean number = false;
             boolean capital = false;
             boolean special = false;
@@ -102,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             secure = false;
         }
+        Log.d("debug","---> SignUpActivity - checkPassword() - secure: " + secure);
         return secure;
     }
 }
