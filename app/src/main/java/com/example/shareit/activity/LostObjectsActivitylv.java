@@ -65,7 +65,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
 
     private void cargarWebService() {
         progreso = new ProgressDialog(this);
-        progreso.setMessage("Obteniendo los objetos perdiodos del servidor...");
+        progreso.setMessage("Obteniendo los objetos perdidos del servidor...");
         progreso.show();
         progreso.hide();
 
