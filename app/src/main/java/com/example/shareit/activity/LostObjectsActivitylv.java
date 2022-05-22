@@ -33,7 +33,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.LostObjectslv);
+        setContentView(R.layout.lost_objectslv);
 
 
 

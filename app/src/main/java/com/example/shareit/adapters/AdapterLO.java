@@ -16,6 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.example.shareit.R;
 import com.example.shareit.objetos.LostOBJ;
+import com.example.shareit.objetos.VolleySingleton;
 
 import java.util.List;
 
