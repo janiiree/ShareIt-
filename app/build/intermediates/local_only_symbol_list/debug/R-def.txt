@@ -21,6 +21,10 @@ id btn_start
 id etEmail
 id etPassword
 id etUsername
+id imageView3
+id imageView4
+id img_ObjetosPerdidos
+id img_apuntes
 id linearLayout
 id spinner
 id textView

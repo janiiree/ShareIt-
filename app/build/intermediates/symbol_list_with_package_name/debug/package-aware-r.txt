@@ -2762,6 +2762,10 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView3
+id imageView4
+id img_ObjetosPerdidos
+id img_apuntes
 id immediateStop
 id included
 id info

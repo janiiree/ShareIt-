@@ -81,7 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         .putExtra("email", email);
                                 startActivity(intent);
                             } else {
-//                                Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), R.string.pass_not_secure, Toast.LENGTH_LONG).show();
                             }
                         }
                     });
