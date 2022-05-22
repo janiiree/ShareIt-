@@ -18,5 +18,5 @@ if (mysqli_connect_errno($con)) {
 	exit();
 }
 # Ejecutar la sentencia SQL
-mysqli_query($con, "INSERT INTO users (email, name, password) VALUES ('$email', '$name', '$degree', '$password')");
+mysqli_query($con, "INSERT INTO users (email, name, degree, password) VALUES ('$email', '$name', '$degree', '$password')");
 ?>
