@@ -31,7 +31,7 @@ public class CheckUserLoginWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        String direccion = "ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/checkUserLogin.php";
+        String direccion = "http://ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/shareit/checkUserLogin.php";
         HttpURLConnection urlConnection;
 
         String email = getInputData().getString("email");
