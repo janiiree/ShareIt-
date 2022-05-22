@@ -31,22 +31,6 @@ public class MenuDelDiaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menudeldia);
 
 
-        FloatingActionButton sum = findViewById(R.id.sum);
-        sum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //toAddLO(getCurrentFocus());
-            }
-
-        });
-
-        setContentView(R.layout.lost_objectslv);
-        ListView tareas = (ListView) findViewById(R.id.lv1);
-
-
-        Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
-        tareas.setAdapter(elAdaptador);
-
     }
 
     @Override
