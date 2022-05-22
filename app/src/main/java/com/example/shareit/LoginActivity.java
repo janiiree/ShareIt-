@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d("prueba", username + " " + email + " " + password);
                             if (workInfo.getOutputData().getString("name") != null) {
                                 username = workInfo.getOutputData().getString("name");
-                                Toast.makeText(getApplicationContext(), R.string.welcome + username + "!", Toast.LENGTH_LONG).show();
+//                                Toast.makeText(getApplicationContext(), R.string.welcome + username + "!", Toast.LENGTH_LONG).show();
                                 finish();
                                 Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
                                 intent.putExtra("name", username)
