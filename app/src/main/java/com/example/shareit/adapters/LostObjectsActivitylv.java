@@ -1,7 +1,6 @@
-package com.example.shareit.adapters;
+package com.example.pruebasshareit;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,7 +51,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
         ListView tareas = (ListView) findViewById(R.id.lv1);
 
 
-        AdapterLO elAdaptador = new AdapterLO(getApplicationContext(), listaObjetos);
+        Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
         tareas.setAdapter(elAdaptador);
 
     }
@@ -66,7 +65,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
 
     private void cargarWebService() {
         progreso = new ProgressDialog(this);
-        progreso.setMessage("Obteniendo los objetos perdiodos del servidor...");
+        progreso.setMessage("Obteniendo los objetos perdidos del servidor...");
         progreso.show();
         progreso.hide();
 
@@ -131,7 +130,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
                                         LostOBJ newOBJ = new LostOBJ(resultEmail[i], resultTit[i], resultDesc[i], resultURL[i]);
                                         listaObjetos.add(newOBJ);
                                     }
-                                    AdapterLO elAdaptador = new AdapterLO(getApplicationContext(), listaObjetos);
+                                    Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
                                     tareas.setAdapter(elAdaptador);
                                     progreso.hide();
                                     progreso.dismiss();
@@ -151,6 +150,5 @@ public class LostObjectsActivitylv extends AppCompatActivity {
 
 
     }
-
 
 }
