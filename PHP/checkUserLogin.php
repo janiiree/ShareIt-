@@ -1,5 +1,5 @@
 <?php
-$DB_SERVER="127.0.0.1"; #la dirección del servidor
+$DB_SERVER="localhost"; #la dirección del servidor
 $DB_USER="Xjbarbero004"; #el usuario para esa base de datos
 $DB_PASS="*0My0ui41hu"; #la clave para ese usuario
 $DB_DATABASE="Xjbarbero004_shareit"; #la base de datos a la que hay que conectarse
