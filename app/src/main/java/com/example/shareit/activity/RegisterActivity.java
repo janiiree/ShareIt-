@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,9 @@ import java.util.regex.Pattern;
 public class RegisterActivity extends AppCompatActivity {
 
     Button btnRegister;
-    EditText etDegree, etEmail, etPassword, etUsername;
+    EditText etEmail, etPassword, etUsername;
     String degree, email, password, username;
+    Spinner spDegree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onClickRegister(View view) {
-        etDegree = findViewById(R.id.etDegree);
-        degree = etDegree.getText().toString();
+        spDegree = findViewById(R.id.spDegree);
+        degree = spDegree.getTransitionName();
 
         etEmail = findViewById(R.id.etEmail);
         email = etEmail.getText().toString();
