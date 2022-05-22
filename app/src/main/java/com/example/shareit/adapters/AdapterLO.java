@@ -48,7 +48,7 @@ public class AdapterLO extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view=inflater.inflate(R.layout.LOItem ,null);
+        view=inflater.inflate(R.layout.lo_item ,null);
         TextView tvNombre= (TextView) view.findViewById(R.id.nombreObj);
         TextView tvDesc=(TextView) view.findViewById(R.id.descObj;
         TextView tvCorreo= (TextView) view.findViewById(R.id.correo);
