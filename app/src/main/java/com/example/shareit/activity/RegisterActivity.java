@@ -1,4 +1,4 @@
-package com.example.shareit;
+package com.example.shareit.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
+
+import com.example.shareit.CheckUserLoginWorker;
+import com.example.shareit.R;
+import com.example.shareit.RegisterWorker;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

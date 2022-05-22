@@ -28,10 +28,10 @@
             android:name="com.example.shareit.MainMenuActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.shareit.LoginActivity"
+            android:name="com.example.shareit.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.shareit.RegisterActivity"
+            android:name="com.example.shareit.LoginActivity"
             android:exported="false" />
         <activity
             android:name="com.example.shareit.MainActivity"

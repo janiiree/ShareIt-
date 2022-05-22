@@ -1,15 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\Igor\.gradle\caches\transforms-3\b4e14d34757296f5b21643bfd4962cb9\transformed\material-1.6.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Igor\.gradle\caches\transforms-3\2c899494aa059aa353c8693e5bb9c70d\transformed\constraintlayout-2.1.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\Igor\.gradle\caches\transforms-3\97988b0f28a513a04038e9dd724181a1\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\64d9f795203c116c8db26b56d25f2ca7\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Igor\.gradle\caches\transforms-3\b86badf6e997f2bccfe644054d57c179\transformed\work-runtime-2.7.1\AndroidManifest.xml:17:1-145:12
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] C:\Users\Igor\.gradle\caches\transforms-3\0cad3df4963040abbaa4017f134c4d82\transformed\filament-android-1.17.1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Igor\.gradle\caches\transforms-3\0b4f2e75d8f553148eccd19eb177b602\transformed\volley-1.2.1\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\abf9b1ced06e34142d711663c5f8d590\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Igor\.gradle\caches\transforms-3\b497f96fe258c69fab9a7dbedcb5971d\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.4] C:\Users\Igor\.gradle\caches\transforms-3\d8ae99f90fa01a6e12039a9d593e94a6\transformed\activity-1.2.4\AndroidManifest.xml:17:1-24:12
@@ -55,20 +56,20 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\c35deb218a42f6b1ccb34889e38f5e8d\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\00cc0f5b3215ee1f60046e4e5c8104d7\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Igor\.gradle\caches\transforms-3\1addb8aa695ae2d100ec75645c6fad62\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
-INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:3:5-34
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-35:12
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:1-34:12
 		INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:2:11-69
@@ -77,7 +78,7 @@ ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManif
 	android:name
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:7:5-33:19
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:7:5-32:19
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\Igor\.gradle\caches\transforms-3\b4e14d34757296f5b21643bfd4962cb9\transformed\material-1.6.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\Igor\.gradle\caches\transforms-3\b4e14d34757296f5b21643bfd4962cb9\transformed\material-1.6.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] C:\Users\Igor\.gradle\caches\transforms-3\2c899494aa059aa353c8693e5bb9c70d\transformed\constraintlayout-2.1.3\AndroidManifest.xml:9:5-20
@@ -116,34 +117,34 @@ ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManif
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:16:13-37
 	android:name
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:15:13-45
-activity#com.example.shareit.LoginActivity
+activity#com.example.shareit.RegisterActivity
 ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:17:9-19:40
 	android:exported
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:19:13-37
 	android:name
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:18:13-42
-activity#com.example.shareit.RegisterActivity
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:18:13-45
+activity#com.example.shareit.LoginActivity
 ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:20:9-22:40
 	android:exported
 		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:22:13-37
 	android:name
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:21:13-45
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:21:13-42
 activity#com.example.shareit.MainActivity
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:24:9-32:20
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:23:9-31:20
 	android:exported
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:26:13-36
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:25:13-41
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:24:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:27:13-31:29
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:28:17-69
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:28:25-66
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:30:17-77
+ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:30:27-74
+		ADDED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml:29:27-74
 uses-sdk
 INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Igor\AndroidStudioProjects\ShareIt\app\src\main\AndroidManifest.xml
@@ -160,6 +161,8 @@ MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Igor\.gradle\caches\tran
 MERGED from [androidx.work:work-runtime:2.7.1] C:\Users\Igor\.gradle\caches\transforms-3\b86badf6e997f2bccfe644054d57c179\transformed\work-runtime-2.7.1\AndroidManifest.xml:21:5-23:41
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] C:\Users\Igor\.gradle\caches\transforms-3\0cad3df4963040abbaa4017f134c4d82\transformed\filament-android-1.17.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.ar.sceneform:filament-android:1.17.1] C:\Users\Igor\.gradle\caches\transforms-3\0cad3df4963040abbaa4017f134c4d82\transformed\filament-android-1.17.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Igor\.gradle\caches\transforms-3\0b4f2e75d8f553148eccd19eb177b602\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
+MERGED from [com.android.volley:volley:1.2.1] C:\Users\Igor\.gradle\caches\transforms-3\0b4f2e75d8f553148eccd19eb177b602\transformed\volley-1.2.1\AndroidManifest.xml:5:5-43
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\abf9b1ced06e34142d711663c5f8d590\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Igor\.gradle\caches\transforms-3\abf9b1ced06e34142d711663c5f8d590\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\Igor\.gradle\caches\transforms-3\b497f96fe258c69fab9a7dbedcb5971d\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41

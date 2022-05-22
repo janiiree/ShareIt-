@@ -1,4 +1,4 @@
-package com.example.shareit;
+package com.example.shareit.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -6,6 +6,10 @@ import androidx.fragment.app.DialogFragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.shareit.InfoDialog;
+import com.example.shareit.LanguageDialog;
+import com.example.shareit.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -63,7 +63,6 @@ animator mtrl_fab_hide_motion_spec
 animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
-array elementos
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -2480,6 +2479,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_sum
 drawable m3_appbar_background
 drawable m3_popupmenu_background_overlay
 drawable m3_radiobutton_ripple
@@ -2668,6 +2668,7 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id correo
 id cos
 id counterclockwise
 id currentState
@@ -2681,6 +2682,7 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id descObj
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2758,6 +2760,7 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id idImagen
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2787,9 +2790,9 @@ id legacy
 id line1
 id line3
 id linear
-id linearLayout
 id listMode
 id list_item
+id lv1
 id masked
 id match_constraint
 id match_parent
@@ -2860,6 +2863,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id nombreObj
 id none
 id normal
 id north
@@ -2936,9 +2940,9 @@ id snackbar_text
 id snap
 id snapMargins
 id south
+id spDegree
 id spacer
 id special_effects_controller_view_tag
-id spinner
 id spline
 id split_action_bar
 id spread
@@ -2960,8 +2964,10 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id sum
 id supportScrollUp
 id tabMode
+id tab_layout
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
 id tag_accessibility_heading
@@ -3127,6 +3133,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_login
+layout activity_lost_objects
 layout activity_main
 layout activity_main_menu
 layout activity_register
@@ -3146,6 +3153,10 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_found
+layout fragment_lost
+layout lo_item
+layout lost_objectslv
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3273,6 +3284,8 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string close_account
+string copyright
 string email
 string email_already_registered
 string error_icon_content_description
@@ -3280,6 +3293,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fill_all_gaps
+string found
 string gotit
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
@@ -3294,6 +3308,7 @@ string lang_eu
 string lang_select
 string lib_name
 string login
+string lost
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular
 string m3_ref_typeface_plain_medium
@@ -3365,6 +3380,8 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mtrl_timepicker_confirm
+string my_account
+string my_notes
 string pass_not_secure
 string password
 string password_toggle_content_description
@@ -3373,7 +3390,10 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
+string search_notes
 string select_language
+string settings
+string share
 string signup
 string start
 string status_bar_notification_info_overflow

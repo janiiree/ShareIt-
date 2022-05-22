@@ -1,4 +1,4 @@
-package com.example.shareit;
+package com.example.shareit.workers;
 
 import android.content.Context;
 import android.util.Log;
@@ -23,7 +23,7 @@ public class RegisterWorker extends Worker {
     @NonNull
     @Override
     public Result doWork() {
-        String direccion = "http://ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jarana021/WEB/registerUser.php";
+        String direccion = "http://ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/shareit/registerUser.php";
         HttpURLConnection urlConnection;
 
         String email = getInputData().getString("email");

@@ -1,4 +1,4 @@
-package com.example.myapplication.Objetos;
+package com.example.shareit.objetos;
 
 public class ObjetoTarea {
     private String nombre;

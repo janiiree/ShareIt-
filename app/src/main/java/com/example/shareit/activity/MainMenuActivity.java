@@ -1,8 +1,10 @@
-package com.example.shareit;
+package com.example.shareit.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.shareit.R;
 
 public class MainMenuActivity extends AppCompatActivity {
 

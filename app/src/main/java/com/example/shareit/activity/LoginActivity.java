@@ -13,6 +13,9 @@ import androidx.work.Data;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
+import com.example.shareit.CheckUserLoginWorker;
+import com.example.shareit.MainMenuActivity;
+import com.example.shareit.R;
 import com.example.shareit.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
