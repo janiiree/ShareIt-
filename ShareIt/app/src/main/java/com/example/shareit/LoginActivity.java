@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin, btnRegister;
     EditText etEmail, etPassword;
-    String email, password, username;
+    String degree, email, password, username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,20 +43,19 @@ public class LoginActivity extends AppCompatActivity {
                     .putString("password", password)
                     .build();
 
-            Log.d("prueba", username + " " + email + " " + password);
-
             OneTimeWorkRequest otwr = new OneTimeWorkRequest.Builder(CheckUserLoginWorker.class).setInputData(data).build();
             WorkManager.getInstance(this).getWorkInfoByIdLiveData(otwr.getId())
                     .observe(this, workInfo -> {
                         if(workInfo != null && workInfo.getState().isFinished()){
-                            Log.d("prueba", username + " " + email + " " + password);
+                            Log.d("prueba", username + " "+ degree + " " + email + " " + password);
                             if (workInfo.getOutputData().getString("name") != null) {
                                 username = workInfo.getOutputData().getString("name");
                                 Toast.makeText(getApplicationContext(), R.string.welcome + username + "!", Toast.LENGTH_LONG).show();
                                 finish();
                                 Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
                                 intent.putExtra("name", username)
-                                        .putExtra("email", email);
+                                        .putExtra("email", email)
+                                        .putExtra("degree", degree);
                                 startActivity(intent);
                             } else {
                                 Toast.makeText(getApplicationContext(), R.string.incorrect_user_pass, Toast.LENGTH_LONG).show();
