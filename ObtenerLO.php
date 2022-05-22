@@ -1,8 +1,8 @@
 <?PHP
 $hostname_localhost="localhost";
-$database_localhost="Xgdelrio004_tareas";
-$username_localhost="Xgdelrio004";
-$password_localhost="*Q48K5Cupz";
+$database_localhost="Xjbarbero004_objetosperdidos";
+$username_localhost="Xjbarbero004";
+$password_localhost="*0My0ui41hu";
 
 $json=array();
 	$propietario=$_GET["propietario"];
