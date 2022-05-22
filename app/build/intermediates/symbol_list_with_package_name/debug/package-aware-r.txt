@@ -2765,6 +2765,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
 id imageView3
 id imageView4
 id img_ObjetosPerdidos
@@ -3136,6 +3137,7 @@ layout activity_login
 layout activity_lost_objects
 layout activity_main
 layout activity_main_menu
+layout activity_menudeldia
 layout activity_register
 layout custom_dialog
 layout design_bottom_navigation_item

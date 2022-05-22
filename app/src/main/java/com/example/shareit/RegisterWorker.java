@@ -1,4 +1,4 @@
-package com.example.shareit.workers;
+package com.example.shareit;
 
 import android.content.Context;
 import android.util.Log;

@@ -1,4 +1,4 @@
-package com.example.pruebasshareit;
+package com.example.shareit.adapters;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
 import com.example.shareit.R;
+import com.example.shareit.adapters.AdapterLO;
 import com.example.shareit.objetos.LostOBJ;
 import com.example.shareit.workers.ObtenerLODB;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -51,7 +52,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
         ListView tareas = (ListView) findViewById(R.id.lv1);
 
 
-        Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
+        AdapterLO elAdaptador = new AdapterLO(getApplicationContext(), listaObjetos);
         tareas.setAdapter(elAdaptador);
 
     }
@@ -130,7 +131,7 @@ public class LostObjectsActivitylv extends AppCompatActivity {
                                         LostOBJ newOBJ = new LostOBJ(resultEmail[i], resultTit[i], resultDesc[i], resultURL[i]);
                                         listaObjetos.add(newOBJ);
                                     }
-                                    Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
+                                    AdapterLO elAdaptador = new AdapterLO(getApplicationContext(), listaObjetos);
                                     tareas.setAdapter(elAdaptador);
                                     progreso.hide();
                                     progreso.dismiss();

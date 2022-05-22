@@ -16,7 +16,8 @@ import androidx.work.WorkManager;
 
 import com.example.shareit.CheckUserLoginWorker;
 import com.example.shareit.R;
-import com.example.shareit.RegisterWorker;
+import com.example.shareit.workers.RegisterWorker;
+
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

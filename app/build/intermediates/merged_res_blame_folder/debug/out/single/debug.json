@@ -48,6 +48,10 @@
         "source": "C:\\Users\\Igor\\AndroidStudioProjects\\ShareIt\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\Igor\\AndroidStudioProjects\\ShareIt\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_menudeldia.xml.flat",
+        "source": "C:\\Users\\Igor\\AndroidStudioProjects\\ShareIt\\app\\src\\main\\res\\layout\\activity_menudeldia.xml"
+    },
+    {
         "merged": "C:\\Users\\Igor\\AndroidStudioProjects\\ShareIt\\app\\build\\intermediates\\merged_res\\debug\\drawable_testu_input.xml.flat",
         "source": "C:\\Users\\Igor\\AndroidStudioProjects\\ShareIt\\app\\src\\main\\res\\drawable\\testu_input.xml"
     },

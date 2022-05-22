@@ -2764,6 +2764,7 @@ int id ifRoom 0x7f0800eb
 int id ignore 0x7f0800ec
 int id ignoreRequest 0x7f0800ed
 int id image 0x7f0800ee
+int id imageView 0x7f080202
 int id imageView3 0x7f0800ef
 int id imageView4 0x7f0800f0
 int id img_ObjetosPerdidos 0x7f0800f1
@@ -3135,6 +3136,7 @@ int layout activity_login 0x7f0b001c
 int layout activity_lost_objects 0x7f0b001d
 int layout activity_main 0x7f0b001e
 int layout activity_main_menu 0x7f0b001f
+int layout activity_menudeldia 0x7f0b0088
 int layout activity_register 0x7f0b0020
 int layout custom_dialog 0x7f0b0021
 int layout design_bottom_navigation_item 0x7f0b0022

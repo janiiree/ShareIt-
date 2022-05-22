@@ -37,7 +37,7 @@ public class MenuDelDiaActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
 
-        cargarImagenWebService();
+//        cargarImagenWebService();
     }
 
     private void cargarImagenWebService(View view) {
