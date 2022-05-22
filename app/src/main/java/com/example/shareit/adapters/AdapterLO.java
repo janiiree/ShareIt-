@@ -44,6 +44,10 @@ public class AdapterLO extends BaseAdapter {
         return objetos.get(i);
     }
 
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
 
 
     @Override
