@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_description">poner una descripcion</string>
+    <string name="app_description">Nuestra app está diseñada para compartir apuntes entre los estudiantes de la universidad para facilitar el aprendizaje.</string>
     <string name="app_name">ShareIt!</string>
     <string name="cancel">Cancelar</string>
     <string name="email">Email</string>
