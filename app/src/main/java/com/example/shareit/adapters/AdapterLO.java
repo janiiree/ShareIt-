@@ -1,4 +1,4 @@
-package com.example.shareit.adapters;
+package Adapters;
 
 import android.content.Context;
 
@@ -45,7 +45,7 @@ public class AdapterLO extends BaseAdapter {
     }
 
     @Override
-    public long getItemId(int i) {
+    public long getItemId(int position) {
         return 0;
     }
 
@@ -54,12 +54,12 @@ public class AdapterLO extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         view=inflater.inflate(R.layout.lo_item ,null);
         TextView tvNombre= (TextView) view.findViewById(R.id.nombreObj);
-        TextView tvDesc=(TextView) view.findViewById(R.id.descObj);
+        TextView tvDesc=(TextView) view.findViewById(R.id.descObj;
         TextView tvCorreo= (TextView) view.findViewById(R.id.correo);
         ImageView ivFoto= (ImageView) view.findViewById(R.id.idImagen);
-        tvNombre.setText(objetos.get(i).getNombreLO());
-        tvCorreo.setText(objetos.get(i).getCorreoLO());
-        tvDesc.setText(objetos.get(i).getDescLO());
+        tvNombre.setText(objetos.get(i).getNombreLO();
+        tvCorreo.setText(objetos.get(i).getCorreoLO();
+        tvDesc.setText(objetos.get(i).getDescLO();
 
         if (objetos.get(i).getRutaImagenLO()!=null){
             //
