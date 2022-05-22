@@ -14,13 +14,13 @@ $json=array();
 		$json['email'][]=$registro[2];
 		$json['url'][]=$registro[3];
 		$json['titulo'][]=$registro[4];
-		$json['estado'][]=$registro[4];
+		$json['estado'][]=$registro[5];
 		while($registro=mysqli_fetch_array($resultado)){
 			$json['desc'][]=$registro[1];
 			$json['email'][]=$registro[2];
 			$json['url'][]=$registro[3];
 			$json['titulo'][]=$registro[4];
-			$json['estado'][]=$registro[4];
+			$json['estado'][]=$registro[5];
 		}
 		echo json_encode($json);
 	} else{
