@@ -1,73 +1,72 @@
 package com.example.shareit;
 
-import android.content.Intent;
-import android.os.Bundle;
+import android.content.Context;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.work.Data;
-import androidx.work.OneTimeWorkRequest;
-import androidx.work.WorkManager;
+import androidx.annotation.NonNull;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
 
-public class LoginActivity extends AppCompatActivity {
+import org.json.simple.JSONObject;
 
-    Button btnLogin, btnRegister;
-    EditText etEmail, etPassword;
-    String degree, email, password, username;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
+public class RegisterWorker extends Worker {
+
+    public RegisterWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+    }
+
+    @NonNull
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-    }
+    public Result doWork() {
+        String direccion = "ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/registerUser.php";
+        HttpURLConnection urlConnection;
 
-    public void onClickLogin(View view) {
-        etEmail = findViewById(R.id.etEmail);
-        email = etEmail.getText().toString();
+        String email = getInputData().getString("email");
+        String password = getInputData().getString("password");
+        String username = getInputData().getString("username");
+        String degree = getInputData().getString("degree");
 
-        etPassword = findViewById(R.id.etPassword);
-        password = etPassword.getText().toString();
+        // Para enviar parámetros al fichero PHP en formato JSON
+        JSONObject json_params = new JSONObject();
+        json_params.put("email", email);
+        json_params.put("password", password);
+        json_params.put("name", username);
+        json_params.put("degree", degree);
 
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        Log.d("prueba", username + " " + degree + " " + email + " " + password);
 
-        if (email == null || password == null) {
-            Toast.makeText(getApplicationContext(), R.string.fill_all_gaps, Toast.LENGTH_LONG).show();
-        } else {
-            Data data = new Data.Builder()
-                    .putString("email", email)
-                    .putString("password", password)
-                    .build();
+        try {
+            URL dest = new URL(direccion);
+            urlConnection = (HttpURLConnection) dest.openConnection();
+            urlConnection.setConnectTimeout(5000);
 
-            OneTimeWorkRequest otwr = new OneTimeWorkRequest.Builder(CheckUserLoginWorker.class).setInputData(data).build();
-            WorkManager.getInstance(this).getWorkInfoByIdLiveData(otwr.getId())
-                    .observe(this, workInfo -> {
-                        if(workInfo != null && workInfo.getState().isFinished()){
-                            Log.d("prueba", username + " "+ degree + " " + email + " " + password);
-                            if (workInfo.getOutputData().getString("name") != null) {
-                                username = workInfo.getOutputData().getString("name");
-                                Toast.makeText(getApplicationContext(), R.string.welcome + username + "!", Toast.LENGTH_LONG).show();
-                                finish();
-                                Intent intent = new Intent(getApplicationContext(), MainMenuActivity.class);
-                                intent.putExtra("name", username)
-                                        .putExtra("email", email)
-                                        .putExtra("degree", degree);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), R.string.incorrect_user_pass, Toast.LENGTH_LONG).show();
-                            }
-                        }
-                    });
-            WorkManager.getInstance(this).enqueue(otwr);
+            // Configurar el objeto HttpURLConnection para indicar que se envían parámetros (en formato JSON)
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoOutput(true);
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+
+            // Convertir el JSON a String
+            PrintWriter out = new PrintWriter(urlConnection.getOutputStream());
+            out.print(json_params);
+            out.close();
+
+            // Se ejecuta la llamada al servicio web
+            int statusCode = urlConnection.getResponseCode();
+
+            // Se mira el código de vuelta y se procesa el resultado
+            if (statusCode == 200) {
+                return Result.success();
+            } else {
+                Result.failure();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    }
-
-    public void onClickRegister(View view) {
-        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-        LoginActivity.this.startActivity(intent);
+        return Result.failure();
     }
 }
