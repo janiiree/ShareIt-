@@ -24,8 +24,7 @@ if (!$resultado) {
 #Acceder al resultado
 $datos = array();
 while($row = $resultado->fetch_assoc()){
-	$datos[] = array('name'=>$row['name'],
-					'degree'=>$row['degree']);
+	$datos[] = array('name'=>$row['name']);
 }
 echo json_encode($datos);
 ?>	
