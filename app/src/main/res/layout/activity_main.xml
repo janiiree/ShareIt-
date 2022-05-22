@@ -17,7 +17,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mi agenda"
+            android:text="ShareIt!"
             android:textColor="#000"
             android:textSize="48sp"
             android:textStyle="bold" />
