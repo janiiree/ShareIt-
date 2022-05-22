@@ -22,4 +22,11 @@
     <string name="start">Hasi</string>
     <string name="username">Izena</string>
     <string name="welcome">Ongi Etorri</string>
+    <string name="lost">Objektu Galduak</string>
+    <string name="my_notes">Gardenkiak</string>
+    <string name="search_notes">"Apunteak bilatu "</string>
+    <string name="settings">Konfigurazioa</string>
+    <string name="share">Partekatu</string>
+    <string name="my_account">Nire Kontua</string>
+    <string name="close_account">Itxi Saioa</string>
 </resources>

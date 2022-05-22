@@ -30,4 +30,8 @@
     <string name="welcome">"Bienvendido"</string>
     <string name="my_account">Mi cuenta</string>
     <string name="close_account">Cerrar sesión</string>
+
+    <string-array name="lista">
+        <item></item>
+    </string-array>
 </resources>

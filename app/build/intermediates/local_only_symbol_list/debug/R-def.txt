@@ -1,9 +1,11 @@
 R_DEF: Internal format may change without notice
 local
+array lista
 color black
 color purple_200
 color purple_500
 color purple_700
+color red
 color teal_200
 color teal_700
 color white
@@ -26,16 +28,16 @@ id etPassword
 id etUsername
 id idImagen
 id imageView
-id imageView3
-id imageView4
-id img_ObjetosPerdidos
 id img_apuntes
+id img_menu
+id img_objetos
 id lv1
 id nombreObj
 id spDegree
 id sum
 id tab_layout
 id textView
+id textView2
 layout activity_login
 layout activity_lost_objects
 layout activity_main
