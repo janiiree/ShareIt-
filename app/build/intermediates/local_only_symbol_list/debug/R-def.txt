@@ -1,5 +1,6 @@
 R_DEF: Internal format may change without notice
 local
+array elementos
 color black
 color purple_200
 color purple_500
@@ -21,6 +22,7 @@ id etEmail
 id etPassword
 id etUsername
 id linearLayout
+id spinner
 id textView
 layout activity_login
 layout activity_main

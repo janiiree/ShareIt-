@@ -21,4 +21,9 @@
     <string name="start">Empezar</string>
     <string name="username">Nombre</string>
     <string name="welcome">"Bienvendido"</string>
+
+    <string-array name="elementos">
+        <item>Seleccionar una opcion</item>
+        <item>Carrera 1</item>
+    </string-array>
 </resources>
