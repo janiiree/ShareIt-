@@ -2,13 +2,18 @@ package Adapters;
 
 import android.content.Context;
 
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 import com.example.shareit.R;
 import com.example.shareit.objetos.LostOBJ;
 
@@ -50,7 +55,38 @@ public class AdapterLO extends BaseAdapter {
         tvNombre.setText(objetos.get(i).getNombreLO();
         tvCorreo.setText(objetos.get(i).getCorreoLO();
         tvDesc.setText(objetos.get(i).getDescLO();
-        ivFoto.setImageBitmap(objetos.get(i).getImagenLO());
+
+        if (objetos.get(i).getRutaImagenLO()!=null){
+            //
+            cargarImagenWebService(objetos.get(i).getRutaImagenLO(), view);
+        }else{
+            ivFoto.setImageResource(R.drawable.ic_sum);
+        }
+
         return view;
     }
+
+    private void cargarImagenWebService(String rutaImagen, View view) {
+
+
+
+        String urlImagen=rutaImagen;
+        urlImagen= urlImagen.replace("\\/","/");
+        ImageRequest imageRequest=new ImageRequest(urlImagen, new Response.Listener<Bitmap>() {
+            @Override
+            public void onResponse(Bitmap response) {
+                ImageView ivFoto= (ImageView) view.findViewById(R.id.idImagen);
+                //ivFoto.setImageResource(R.drawable.ic_sum);
+                ivFoto.setImageBitmap(response);
+            }
+        }, 0, 0, ImageView.ScaleType.CENTER, null, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(contexto.getApplicationContext(),"Error al cargar la imagen",Toast.LENGTH_SHORT).show();
+            }
+        });
+        //request.add(imageRequest);
+        VolleySingleton.getIntanciaVolley(contexto).addToRequestQueue(imageRequest);
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.example.shareit.activity;
+package com.example.pruebasshareit;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,14 +15,10 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.myapplication.Objetos.ObjetoTarea;
 import com.example.shareit.R;
 import com.example.shareit.objetos.LostOBJ;
 import com.example.shareit.workers.ObtenerLODB;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-//importar el worker que obtenga los objetos perdidos
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,11 +42,12 @@ public class LostObjectsActivitylv extends AppCompatActivity {
         sum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                toAddLO(getCurrentFocus());
+                //toAddLO(getCurrentFocus());
             }
+
         });
 
-        setContentView(R.layout.LostObjectslv);
+        setContentView(R.layout.lost_objectslv);
         ListView tareas = (ListView) findViewById(R.id.lv1);
 
 
@@ -86,58 +82,52 @@ public class LostObjectsActivitylv extends AppCompatActivity {
                     public void onChanged(WorkInfo workInfo) {
                         if (workInfo != null && workInfo.getState().isFinished()) {
                             if (workInfo.getState().equals(WorkInfo.State.SUCCEEDED)) {
-                                if (workInfo.getOutputData().getString("datos").equals("error")) {
-                                    Toast toast = Toast.makeText(getApplicationContext(), "Algo ha ido mal :(", Toast.LENGTH_SHORT);
+                                if (workInfo.getOutputData().getString("objetosperdidos").equals("error")) {
+                                    Toast toast = Toast.makeText(getApplicationContext(), "En datos devuelve error :(", Toast.LENGTH_SHORT);
                                     toast.show();
                                     progreso.hide();
-                                } else if (workInfo.getOutputData().getString("datos").equals("no hay tareas")) {
+                                } else if (workInfo.getOutputData().getString("objetosperdidos").equals("No hay objetos perdidos")) {
 
+                                    Toast toast = Toast.makeText(getApplicationContext(), "No hay objetos perdidos", Toast.LENGTH_SHORT);
+                                    toast.show();
 
-                                    ListView tareas = (ListView) findViewById(R.id.lv1);
-                                    Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), ids, nombres, descripciones);
-                                    tareas.setAdapter(elAdaptador);
-                                    progreso.hide();
-                                    progreso.dismiss();
                                 } else{
-                                    String resultados = workInfo.getOutputData().getString("datos");
-                                    String[] resultSeparados = new String[3];
+                                    String resultados = workInfo.getOutputData().getString("objetosperdidos");
+                                    String[] resultSeparados = new String[4];
                                     resultSeparados = resultados.split("],");
-                                    String[] resultDesc = resultSeparados[0].split(":");
-                                    String[] resultEmail= resultSeparados[1].split(":");
-                                    String[] resultURL = resultSeparados[2].split(":");
-                                    String[] resultTitulo = resultSeparados[3].split(":");
+                                    String[] resultDesc = resultSeparados[0].split("\":");
+                                    String[] resultEmail= resultSeparados[1].split("\":");
+                                    String[] resultURL = resultSeparados[2].split("\":");
+                                    String[] resultTit = resultSeparados[3].split("\":");
 
                                     StringBuilder de = new StringBuilder(resultDesc[1]);
                                     StringBuilder em = new StringBuilder(resultEmail[1]);
                                     StringBuilder ur = new StringBuilder(resultURL[1]);
-                                    StringBuilder ti = new StringBuilder(resultTitulo[1]);
+                                    StringBuilder ti = new StringBuilder(resultTit[1]);
 
                                     de.deleteCharAt(0);
                                     de.deleteCharAt(0);
-                                    de.deleteCharAt(de.length()-1);
                                     resultDesc = de.toString().split("\",\"");
 
                                     em.deleteCharAt(0);
                                     em.deleteCharAt(0);
-                                    em.deleteCharAt(de.length()-1);
+                                    em.deleteCharAt(em.length()-1);
                                     resultEmail = em.toString().split("\",\"");
 
                                     ur.deleteCharAt(0);
                                     ur.deleteCharAt(0);
-                                    ur.deleteCharAt(de.length()-1);
+                                    ur.deleteCharAt(ur.length()-1);
                                     resultURL = ur.toString().split("\",\"");
 
                                     ti.deleteCharAt(0);
                                     ti.deleteCharAt(0);
-                                    ti.deleteCharAt(de.length()-1);
-                                    ti.deleteCharAt(de.length()-1);
-                                    ti.deleteCharAt(de.length()-1);
-                                    resultDesc = ti.toString().split("\",\"");
+                                    ti.deleteCharAt(ti.length()-1);
+                                    resultTit = ti.toString().split("\",\"");
 
                                     ListView tareas = (ListView) findViewById(R.id.lv1);
                                     listaObjetos.clear();
                                     for(int i=0;i<resultURL.length;i++){
-                                        LostOBJ newOBJ = new LostOBJ(resultEmail[i], resultTitulo[i], resultDesc[i], resultURL[i]);
+                                        LostOBJ newOBJ = new LostOBJ(resultEmail[i], resultTit[i], resultDesc[i], resultURL[i]);
                                         listaObjetos.add(newOBJ);
                                     }
                                     Adapters.AdapterLO elAdaptador = new Adapters.AdapterLO(getApplicationContext(), listaObjetos);
@@ -160,14 +150,5 @@ public class LostObjectsActivitylv extends AppCompatActivity {
 
 
     }
-
-
-    public void toAddLO(View view){
-        Intent toTareas = new Intent(this, Tareas.class);
-        toTareas.putExtra("usuario", propietario);
-        startActivity(toTareas);
-    }
-
-
 
 }

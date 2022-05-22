@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.work.Data;
 import androidx.work.ListenableWorker;
+import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
 import java.io.BufferedInputStream;
@@ -17,7 +18,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class ObtenerLODB {
+public class ObtenerLODB extends Worker {
     public ObtenerLODB(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
     }
