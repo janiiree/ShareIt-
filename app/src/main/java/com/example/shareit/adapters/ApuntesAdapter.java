@@ -29,28 +29,31 @@ public class ApuntesAdapter extends ArrayAdapter<Apuntes> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row=convertView;
-        PdfHolder holder=null;
+        apunteHolder holder=null;
         if(row==null)
         {
             LayoutInflater inflater=LayoutInflater.from(activity);
             row=inflater.inflate(layoutResourceId,parent,false);
-            holder=new PdfHolder();
+            holder=new apunteHolder();
             holder.textViewName= (TextView) row.findViewById(R.id.textViewName);
             holder.textViewUrl= (TextView) row.findViewById(R.id.textViewUrl);
             row.setTag(holder);
         }
         else
         {
-            holder= (PdfHolder) row.getTag();
+            holder= (apunteHolder) row.getTag();
         }
 
         apuntes = data.get(position);
-        holder.textViewName.setText(apuntes.getName());
-        holder.textViewUrl.setText(apuntes.getUrl());
+        holder.textViewName.setText(apuntes.getTitulo());
+        holder.textViewName.setText(apuntes.getEmail());
+        holder.textViewName.setText(apuntes.getDescripcion());
+        holder.textViewName.setText(apuntes.getDegree());
+        holder.textViewName.setText(apuntes.getAsignatura());
         return row;
     }
 
-    class PdfHolder
+    class apunteHolder
     {
         TextView textViewName,textViewUrl;
     }
