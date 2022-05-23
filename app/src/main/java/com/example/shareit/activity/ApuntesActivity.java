@@ -41,42 +41,42 @@ import java.util.UUID;
 
 public class ApuntesActivity extends AppCompatActivity implements View.OnClickListener {
 
-    //Declaring views
+    //Botones
     private Button buttonChoose;
     private Button buttonUpload;
 
     private EditText editText;
 
+    //  URLs
     public static final String UPLOAD_URL = "http://ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/shareit/subirarchivos.php";
     public static final String PDF_FETCH_URL = "http://ec2-52-56-170-196.eu-west-2.compute.amazonaws.com/jbarbero004/WEB/shareit/getApuntes.php";
 
     ImageView imageView;
 
-    //Image request code
+    //Solicitud de imagen
     private int PICK_PDF_REQUEST = 1;
 
-    //storage permission code
+    //Permiso de almacenamiento
     private static final int STORAGE_PERMISSION_CODE = 123;
 
 
 
-    //Uri to store the image uri
+    //Uri para almacenar la imagen uri
     private Uri filePath;
 
-    //ListView to show the fetched Pdfs from the server
+    //ListView
     ListView listView;
 
-    //button to fetch the intiate the fetching of pdfs.
+    //Boton
     Button buttonFetch;
 
-    //Progress bar to check the progress of obtaining pdfs
+    //Progreso
     ProgressDialog progressDialog;
 
-    //an array to hold the different pdf objects
-    ArrayList<Apuntes> pdfList= new ArrayList<Apuntes>();
+    //Array de apuntes
+    ArrayList<Apuntes> apuntesList= new ArrayList<Apuntes>();
 
-    //pdf adapter
-
+    //Adapter de apuntes
     ApuntesAdapter pdfAdapter;
 
 
@@ -85,32 +85,25 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Requesting storage permission
         requestStoragePermission();
 
-        //Initializing views
         buttonChoose = (Button) findViewById(R.id.buttonChoose);
         buttonUpload = (Button) findViewById(R.id.buttonUpload);
 
         editText = (EditText) findViewById(R.id.editTextName);
 
-        //initializing ListView
         listView = (ListView) findViewById(R.id.listView);
 
-        //initializing buttonFetch
         buttonFetch = (Button) findViewById(R.id.buttonFetchPdf);
 
-        //initializing progressDialog
 
         progressDialog = new ProgressDialog(this);
 
-        //Setting clicklistener
         buttonChoose.setOnClickListener(this);
         buttonUpload.setOnClickListener(this);
         buttonFetch.setOnClickListener(this);
 
 
-        //setting listView on item click listener
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -128,27 +121,34 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     public void uploadMultipart() {
-        //getting name for the pdf
-        String name = editText.getText().toString().trim();
+        
+        String titulo = editText.getText().toString().trim();
+        String descr = editText.getText().toString().trim();
+        String email = editText.getText().toString().trim();
+        String url = editText.getText().toString().trim();
+        String degree = editText.getText().toString().trim();
+        String asignatura = editText.getText().toString().trim();
 
-        //getting the actual path of the pdf
         String path = FilePath.getPath(this, filePath);
 
         if (path == null) {
 
-            Toast.makeText(this, "Please move your .pdf file to internal storage and retry", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Mueva su archivo .pdf al almacenamiento interno y vuelva a intentarlo", Toast.LENGTH_LONG).show();
         } else {
-            //Uploading code
             try {
                 String uploadId = UUID.randomUUID().toString();
 
-                //Creating a multi part request
                 new MultipartUploadRequest(this, uploadId, UPLOAD_URL)
-                        .addFileToUpload(path, "pdf") //Adding file
-                        .addParameter("name", name) //Adding text parameter to the request
+                        .addFileToUpload(path, "apuntes")
+                        .addParameter("titulo", titulo) 
+                        .addParameter("descr", descr) 
+                        .addParameter("email", email) 
+                        .addParameter("url", url) 
+                        .addParameter("degree", degree) 
+                        .addParameter("asignatura", asignatura) 
                         .setNotificationConfig(new UploadNotificationConfig())
                         .setMaxRetries(2)
-                        .startUpload(); //Starting the upload
+                        .startUpload();
 
             } catch (Exception exc) {
                 Toast.makeText(this, exc.getMessage(), Toast.LENGTH_SHORT).show();
@@ -156,15 +156,13 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    //method to show file chooser
     private void showFileChooser() {
         Intent intent = new Intent();
         intent.setType("application/pdf");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Pdf"), PICK_PDF_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Elige Pdf"), PICK_PDF_REQUEST);
     }
 
-    //handling the ima chooser activity result
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -174,35 +172,28 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
-    //Requesting permission
     private void requestStoragePermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)
             return;
 
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
-            //If the user has denied the permission previously your code will come to this block
-            //Here you can explain why you need this permission
-            //Explain here why you need this permission
+            Toast.makeText(this, "Necesito el permiso, por favor.", Toast.LENGTH_LONG).show();
         }
-        //And finally ask for the permission
+        //Pedir el permiso
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
-    //This method will be called when the user will tap on allow or deny
+    //Se llamará a este método cuando el usuario haga clic en permitir o denegar
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        //Checking the request code of our request
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == STORAGE_PERMISSION_CODE) {
 
-            //If permission is granted
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //Displaying a toast
-                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Permiso concedido ahora puedes leer el almacenamiento", Toast.LENGTH_LONG).show();
             } else {
-                //Displaying another toast if permission is not granted
-                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Vaya, acabas de denegar el permiso.", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -218,13 +209,13 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
 
         if(v==buttonFetch){
 
-            getPdfs();
+            getApuntes();
         }
     }
 
-    private void getPdfs() {
+    private void getApuntes() {
 
-        progressDialog.setMessage("Fetching Pdfs... Please Wait");
+        progressDialog.setMessage("Obteniendo Apuntes... Por favor espere");
         progressDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, PDF_FETCH_URL,
 
@@ -234,25 +225,31 @@ public class ApuntesActivity extends AppCompatActivity implements View.OnClickLi
                         progressDialog.dismiss();
                         try {
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(ApuntesActivity.this,obj.getString("message"), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ApuntesActivity.this,obj.getString("titulo"), Toast.LENGTH_SHORT).show();
 
-                            JSONArray jsonArray = obj.getJSONArray("pdfs");
+                            JSONArray jsonArray = obj.getJSONArray("apuntes");
 
                             for(int i=0;i<jsonArray.length();i++){
 
-                                //Declaring a json object corresponding to every pdf object in our json Array
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                //Declaring a Pdf object to add it to the ArrayList  pdfList
                                 Apuntes apuntes  = new Apuntes();
-                                String pdfName = jsonObject.getString("name");
+                                String pdfName = jsonObject.getString("titulo");
+                                String pdfDescr = jsonObject.getString("descripcion");
+                                String pdfEmail = jsonObject.getString("email");
                                 String pdfUrl = jsonObject.getString("url");
+                                String pdfDegree = jsonObject.getString("degree");
+                                String pdfAsignatura = jsonObject.getString("asignatura");
                                 apuntes.setName(pdfName);
+                                apuntes.setDescr(pdfDescr);
+                                apuntes.setEmail(pdfEmail);
                                 apuntes.setUrl(pdfUrl);
-                                pdfList.add(apuntes);
+                                apuntes.setDegree(pdfDegree);
+                                apuntes.setAsignatura(pdfAsignatura);
+                                apuntesList.add(apuntes);
 
                             }
 
-                            pdfAdapter=new ApuntesAdapter(ApuntesActivity.this,R.layout.list_apuntes, pdfList);
+                            pdfAdapter=new ApuntesAdapter(ApuntesActivity.this,R.layout.list_apuntes, apuntesList);
 
                             listView.setAdapter(pdfAdapter);
 
